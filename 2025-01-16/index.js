@@ -58,3 +58,24 @@ function countAllThrees(array) {
 }
 
 console.log("3. Suskačiuoti trejetus", countAllThrees(skaiciai));
+
+// 4. Sukurkite funkcijas countAllEven(array) ir countAllOdd(array).
+// Pirmoji funkcija suskaičiuoja, kiek yra lyginių skaičių pateiktame masyve.
+//  Kita suskaičiuoja kiek yra nelyginių skaičių;
+// function filtruotiNelyginius(masyvas) {
+//   // let index = 0;
+
+//   // while (index < masyvas.length){
+//   //     if (masyvas[index] % 2 > 0 || typeof masyvas[index] !== "number"){
+//   //         masyvas.splice(index, 1)
+//   //     } else index++;
+
+//   // }
+// //   for (let index = 0; index < masyvas.length; index++) {
+// //     if (masyvas[index] % 2 == 0 || typeof masyvas[index] !== "number") {
+// //       masyvas.splice(index, 1);
+// //       index--;
+// //     }
+// //   }
+// //   return masyvas;
+// // }
