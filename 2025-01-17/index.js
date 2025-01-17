@@ -137,7 +137,7 @@ console.log("6. Kokio ilgio skaičius", kiekSimboliu(459856878971645));
 // kuri suskaičiuotų kiek pinigų duos matematikas . turtuoliui ir kiek turtuolis
 // sumokės matematikui.
 
-function kasKiekgaus() {
+function kasKiekGaus() {
   let turtuolisGaus = 0;
   let matematikasGaus = 0;
   for (let i = 1; i <= 31; i++) {
@@ -147,7 +147,7 @@ function kasKiekgaus() {
   return `Turtuoliui Matematikas sumokės ${turtuolisGaus} mln. $, tuo tarpu Turtuolis jam sumokės ${matematikasGaus} ct`;
 }
 
-console.log(kasKiekgaus());
+console.log(kasKiekGaus());
 
 // 8. Parašyti programą kuri atspausdintu visus Armstrongo skaičius nuo 100
 // iki 999 intervale. Armstongo skaičiaus pvz ABC = A3 + B3 + C3 (visų
