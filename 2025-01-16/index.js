@@ -62,6 +62,8 @@ console.log("3. Suskačiuoti trejetus", countAllThrees(skaiciai));
 // 4. Sukurkite funkcijas countAllEven(array) ir countAllOdd(array).
 // Pirmoji funkcija suskaičiuoja, kiek yra lyginių skaičių pateiktame masyve.
 //  Kita suskaičiuoja kiek yra nelyginių skaičių;
+
+const numberArray = [1, 5, 3, 8, 10, 15, 3, 9, 4, 3, 2];
 function countAllOdd(array) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] % 2 == 0 || typeof array[i] !== "number") {
@@ -80,3 +82,5 @@ function countAllEven(array) {
   }
   return array.length;
 }
+console.log("4. Suskaičiuoti visus nelyginius", countAllOdd(numberArray));
+console.log("4. Suskaičiuoti visus lyginius", countAllEven(numberArray));
