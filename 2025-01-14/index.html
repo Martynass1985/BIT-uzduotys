@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <div><label for="inputasTekstas">Įveskite mygtuko tekstą:</label></div>
+      <input
+        id="inputasTekstas"
+        type="text"
+        placeholder="Įveskite mygtuko pavadinimą"
+      />
+    </div>
+    <div>
+      <div><label for="inputasSpalva">Pasirinkite mygtuko spalvą:</label></div>
+      <input id="inputasSpalva" type="color" value="#ff0000" />
+    </div>
+    <div>
+      <div>
+        <label for="inputasUzapvalinimas"
+          >Pasirinkite skaičių kraštinių užapvalinimui:</label
+        >
+      </div>
+      <input
+        id="inputasUzapvalinimas"
+        type="number"
+        placeholder="Apvalūs kraštai"
+      />
+    </div>
+    <div>
+      <div>
+        <label for="inputasVirsusApacia"
+          >Pasirinkite skaičių atitraukimui nuo viršaus ir apačios:</label
+        >
+      </div>
+      <input
+        id="inputasVirsusApacia"
+        type="number"
+        placeholder="Atitraukimas iš viršaus ir apačios"
+      />
+    </div>
+    <div>
+      <div>
+        <label for="inputasSoninesKrastines"
+          >Pasirinkite skaičių atitraukimui nuo šonu:</label
+        >
+      </div>
+      <input
+        id="inputasSoninesKrastines"
+        type="number"
+        placeholder="Atitraukimas iš šonų"
+      />
+    </div>
+    <div><label for="border-style">Pasirinkite apvado stilių:</label></div>
+    <select name="borderStyle" id="border-style">
+      <option value="">--Pasirinkite galimą variantą--</option>
+      <option value="dotted">Taškuotas</option>
+      <option value="dashed">Brukšniuotas</option>
+      <option value="solid">Vientisas</option>
+      <option value="double">Dvigubas</option>
+      <option value="inset">3D įspaustas</option>
+      <option value="outset">3D atspaustas</option>
+      <option value="none">Be apvado</option>
+    </select>
+
+    <button
+      onclick="mygtukoSpalva(), mygtukoTekstas(), krastoUzapvalinimas(), soninesParastys(), virsusApaciaParastys(), apvadoParinkimas()"
+      id="pritaikyti"
+    >
+      Pritaikyti
+    </button>
+    <div><button id="my-button"></button></div>
+    <script src="script.js"></script>
+  </body>
+</html>

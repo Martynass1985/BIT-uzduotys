@@ -1,0 +1,32 @@
+input {
+    margin: 5px 10px 5px 50px;
+    height: 30px;
+    width: 205px;
+    background-color: #383f5faf;
+    color: white;
+    font-size: 15px;
+}
+#pritaikyti {
+    border-radius: 5px;
+    height: 30px;
+    color: white;
+    background:linear-gradient(#455699, #383f5f);
+    transition: all ease-in-out .3s;
+}
+#pritaikyti:hover {
+    -webkit-box-shadow: 0px 0px 25px -8px rgba(209,38,209,1);
+    -moz-box-shadow: 0px 0px 25px -8px rgba(209,38,209,1);
+    box-shadow: 0px 0px 25px -8px rgba(209,38,209,1);
+background:linear-gradient(#6a76aa, #383f5f);
+}
+select {
+    margin: 5px 10px 5px 50px;
+    height: 30px;
+    width: 205px;
+    background-color: #383f5faf;
+    color: white;
+    font-size: 15px;
+}
+#my-button {
+    margin: 20px 0 0 50px;
+}
