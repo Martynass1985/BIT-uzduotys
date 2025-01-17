@@ -139,12 +139,13 @@ console.log("6. Kokio ilgio skaičius", kiekSimboliu(459856878971645));
 
 function kasKiekGaus() {
   let turtuolisGaus = 0;
-  let matematikasGaus = 0;
+  let matematikasGaus = 2;
   for (let i = 1; i <= 31; i++) {
     turtuolisGaus += 1;
-    matematikasGaus = matematikasGaus + i * 2;
+    matematikasGaus *= 2;
   }
-  return `Turtuoliui Matematikas sumokės ${turtuolisGaus} mln. $, tuo tarpu Turtuolis jam sumokės ${matematikasGaus} ct`;
+  matematikasGaus = (matematikasGaus / 100 / 1000000).toFixed(1);
+  return `Turtuoliui Matematikas sumokės ${turtuolisGaus} mln. $, tuo tarpu Turtuolis jam sumokės ${matematikasGaus} mln $`;
 }
 
 console.log(kasKiekGaus());
@@ -152,3 +153,15 @@ console.log(kasKiekGaus());
 // 8. Parašyti programą kuri atspausdintu visus Armstrongo skaičius nuo 100
 // iki 999 intervale. Armstongo skaičiaus pvz ABC = A3 + B3 + C3 (visų
 // atskirų skaitmenų pakeltų skaičiaus skaitmenų kiekio laipsniu suma.)
+
+function armstrongNumbers() {
+  for (let i = 100; i < 1000; i++) {
+    p = i.toString().split("").map(Number);
+    suma = p[0] ** p.length + p[1] ** p.length + p[2] ** p.length;
+    if (i === suma) {
+      console.log(i);
+    }
+  }
+}
+
+armstrongNumbers();
