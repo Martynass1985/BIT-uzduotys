@@ -113,7 +113,7 @@ function throwCoin() {
   if (ismesta === 0) return "H";
   return "S";
 }
-console.log(throwCoin());
+console.log("5. Iškrito", throwCoin());
 
 // Sukurkite funkciją, kuri imituoja monetos metimą 20 kartų,
 // suskaičiuokite kiek kartų iškrito skaičius, kiek kartų iškrito herbas.
@@ -163,3 +163,39 @@ function throwCointwentyTimes() {
 }
 
 console.log(throwCointwentyTimes());
+
+// 8. Sukurkite funkciją sumAll(masyvas), kuri susumuoja visus masyvo elementus,
+// bei gražina šią sumą kaip rezultatą;
+const numberMasyvas = [101, 58, 37, 8, 10, 29, 15, 3, 9, 46, 3, 62, 2];
+
+function sumAll(masyvas) {
+  suma = 0;
+  for (let i = 0; i < masyvas.length; i++) {
+    suma += masyvas[i];
+  }
+  return suma;
+}
+
+console.log("8. Sudėti masyvo skaičius", sumAll(numberMasyvas));
+
+// 9. Sukurkite funkciją average(arr), kuri atranda visų masyve pateiktų skaičių vidurkį;
+// PVZ: average([1,2,3,4,5])//3
+
+function average(m) {
+  s = 0;
+  for (let i = 0; i < m.length; i++) {
+    s += m[i];
+  }
+  return (s / m.length).toFixed(2);
+}
+
+console.log("9. Išvesti vidurkį", average(numberMasyvas));
+
+// 10. Sukurkite funkciją findAllUniqueNumbers(masyvas), kuri atranda masyve esančius unikalius skaičius.
+// Gražina juos masyvo pavidalu: pvz: findAllUniqueNumbers([1,1,2,8,8,1, 4, 6]) // [1,2,8,4,6];
+const count = [1, 5, 1, 2, 8, 8, 1, 4, 6, 5];
+function findAllUniqueNumbers(h) {
+  return [...new Set(h)];
+}
+
+console.log("10.Surasti unikalius skaičius", findAllUniqueNumbers(count));
