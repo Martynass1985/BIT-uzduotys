@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Monetos metimo Žaidimas</h2>
+    <div>
+      <select id="pasirinkimas" placeholder="Pasirinkite pusę">
+        <option value="">--Pasirinkite Pusę--</option>
+        <option value="---Herbą---">Herbas</option>
+        <option value="---Skaičių---">Skaičius</option>
+      </select>
+      <button id="Pasirinkti" onclick="getValue()">Pasirinkti</button>
+      <div>
+        <label for="pasirinkta">Jūs pasirinkote:</label>
+        <span id="pasirinkta"></span>
+      </div>
+    </div>
+    <div><button onclick="throwCoin()">Mesti Monetą</button></div>
+
+    <div id="ismesta"></div>
+    <div><h3 id="arLaimėjo"></h3></div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

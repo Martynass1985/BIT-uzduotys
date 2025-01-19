@@ -108,12 +108,39 @@ function countAllEvenUnderSix(array) {
 // 6.Sukurkite funkciją throwCoin(), kuri imituoja monetos metimą.
 // funkcijos gražinama reikšmė: “H” - Herbas arba “S” - Skaičius;
 
+const ismestasKauliukasElement = document.querySelector("#ismesta");
+const arLaimejoElement = document.querySelector("#arLaimėjo");
+const pasirinktaPuse = document.querySelector("#pasirinkimas");
+const jusPasirinkoteElement = document.getElementById(`pasirinkta`);
+
 function throwCoin() {
   let ismesta = rand(0, 1);
-  if (ismesta === 0) return "H";
-  return "S";
+  let rezult = 0;
+  if (ismesta === 0) {
+    ismestasKauliukasElement.innerHTML = "Iškrito Skaičius";
+  } else {
+    ismestasKauliukasElement.innerHTML = "Iškrito Herbas";
+  }
 }
-console.log("5. Iškrito", throwCoin());
+function getValue() {
+  jusPasirinkoteElement.innerHTML = pasirinktaPuse.value;
+}
+
+if (
+  ismestasKauliukasElement.innerHTML == "Iškrito Herbas"
+  // jusPasirinkoteElement.value == "---Herbą---"
+) {
+  arLaimejoElement.innerHTML = "Sveikiname jūs Laimėjote";
+} else if (
+  jusPasirinkoteElement.innerHTML == "---Skaičių---" &&
+  ismestasKauliukasElement.innerHTML == "Iškrito Skaičius"
+) {
+  arLaimejoElement.innerHTML = "Sveikiname jūs Laimėjote";
+} else {
+  arLaimejoElement.innerHTML = "Dėja jus nepataikėte. Bandykite dar kartą";
+}
+// ismestasKauliukasElement.innerHTML = `Išmestas ${rezult}`;
+// console.log("5. Iškrito", throwCoin());
 
 // Sukurkite funkciją, kuri imituoja monetos metimą 20 kartų,
 // suskaičiuokite kiek kartų iškrito skaičius, kiek kartų iškrito herbas.
