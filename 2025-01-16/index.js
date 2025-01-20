@@ -71,7 +71,7 @@ function countAllOdd(array) {
 
 function countAllEven(array) {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] % 2 > 0 || typeof array[i] !== "number") {
+    if (array[i] % 2 != 0 || typeof array[i] !== "number") {
       array.splice(i, 1);
       i--;
     }
@@ -86,7 +86,7 @@ function countAllEven(array) {
 
 function countAllEvenUnderSix(array) {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] % 2 > 0 || array[i] > 6) {
+    if (array[i] % 2 != 0 || array[i] > 6) {
       array.splice(i, 1);
       i--;
     }
@@ -108,9 +108,7 @@ const pasirinktaPuse = document.querySelector("#pasirinkimas");
 const jusPasirinkoteElement = document.getElementById(`pasirinkta`);
 
 function throwCoin() {
-  let ismesta = rand(0, 1);
-
-  if (ismesta === 0) {
+  if (rand(0, 1) === 0) {
     ismestasKauliukasElement.innerHTML = "Iškrito Skaičius";
   } else {
     ismestasKauliukasElement.innerHTML = "Iškrito Herbas";
@@ -151,16 +149,16 @@ function getValue() {
 //   return masy.length;
 // }
 
-function throwCointwentyTimes() {
+function throwCointwentyTimes(n) {
   let iskritoHerbas = 0;
   let iskritoSkaicius = 0;
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < n; i++) {
     let iskrito = throwCoin();
     if (iskrito === "S") iskritoSkaicius++;
-    else iskritoHerbas++;
+    iskritoHerbas++;
   }
-  let iskritoSkaiciusProc = ((iskritoSkaicius / 20) * 100).toFixed(0);
-  let iskritoHerbasProc = ((iskritoHerbas / 20) * 100).toFixed(0);
+  let iskritoSkaiciusProc = ((iskritoSkaicius / n) * 100).toFixed(0);
+  let iskritoHerbasProc = ((iskritoHerbas / n) * 100).toFixed(0);
   return (
     "Skaičius iškrito " +
     iskritoSkaicius +
@@ -182,9 +180,7 @@ const numberMasyvas = [101, 58, 37, 8, 10, 29, 15, 3, 9, 46, 3, 62, 2];
 
 function sumAll(masyvas) {
   suma = 0;
-  for (let i = 0; i < masyvas.length; i++) {
-    suma += masyvas[i];
-  }
+  for (let i = 0; i < masyvas.length; i++) suma += masyvas[i];
   return suma;
 }
 
