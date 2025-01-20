@@ -9,16 +9,14 @@ function rand(min, max) {
 }
 
 function generuotiAtsitiktinius(n, m, o) {
-  let index = 0;
   const atsitiktiniai = [];
-  while (index < n) {
-    const atsitiktinisSk = rand(m, o);
+  for (let i = 0; i < n; i++) {
+    let atsitiktinisSk = rand(m, o);
     atsitiktiniai.push(atsitiktinisSk);
-    index++;
   }
   return atsitiktiniai;
 }
-const atsitiktiniai = [];
+// const atsitiktiniai = [];
 console.log(
   "1. sugeneruoti atsitiktinių skaičių masyvą:",
   generuotiAtsitiktinius(8, 1, 20)
@@ -31,25 +29,21 @@ console.log(
 
 const skaičiųMasyvas = [1, 5, 3, 8, 10, 15, 3, 9, 4, 3, 2];
 
-function tikMazesni(masyvas, sk) {
-  let index = 0;
-  const tikMazesniuSk = [];
-  while (index < masyvas.length) {
-    if (masyvas[index] < sk) {
-      tikMazesniuSk.push(masyvas[index]);
+function tikMazesni(m, n) {
+  for (let i = 0; i < m.length; i++) {
+    if (m[i] <= n) {
+      console.log(m[i]);
     }
-    index++;
   }
-  return tikMazesniuSk;
 }
-console.log("2. Mažesni skaičiai iš masyvo:", tikMazesni(skaičiųMasyvas, 9));
+"4.", tikMazesni(skaičiųMasyvas, 9);
 
 // 3. Sukurkite funkciją, countAllThrees(array), kuri suskaičiuotų,
 //  kiek kartų pateiktame skaičių masyve yra pasikartojantis skaičius 3;
 skaiciai = [3, 5, 6, 3, 8, 9, 3, 3, 3, 7];
 function countAllThrees(array) {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] !== 3) {
+    if (array[i] !== 3){
       array.splice(i, 1);
       i--;
     }
@@ -115,32 +109,23 @@ const jusPasirinkoteElement = document.getElementById(`pasirinkta`);
 
 function throwCoin() {
   let ismesta = rand(0, 1);
-  let rezult = 0;
+
   if (ismesta === 0) {
     ismestasKauliukasElement.innerHTML = "Iškrito Skaičius";
   } else {
     ismestasKauliukasElement.innerHTML = "Iškrito Herbas";
   }
 }
+if (throwCoin().value = "Iškrito Skaičius" && ) {
+  ismestasKauliukasElement.innerHTML = "Skaičius";
+} else {
+  ismestasKauliukasElement.innerHTML = "Herbas";
+}
+
 function getValue() {
   jusPasirinkoteElement.innerHTML = pasirinktaPuse.value;
 }
 
-if (
-  ismestasKauliukasElement.innerHTML == "Iškrito Herbas"
-  // jusPasirinkoteElement.value == "---Herbą---"
-) {
-  arLaimejoElement.innerHTML = "Sveikiname jūs Laimėjote";
-} else if (
-  jusPasirinkoteElement.innerHTML == "---Skaičių---" &&
-  ismestasKauliukasElement.innerHTML == "Iškrito Skaičius"
-) {
-  arLaimejoElement.innerHTML = "Sveikiname jūs Laimėjote";
-} else {
-  arLaimejoElement.innerHTML = "Dėja jus nepataikėte. Bandykite dar kartą";
-}
-// ismestasKauliukasElement.innerHTML = `Išmestas ${rezult}`;
-// console.log("5. Iškrito", throwCoin());
 
 // Sukurkite funkciją, kuri imituoja monetos metimą 20 kartų,
 // suskaičiuokite kiek kartų iškrito skaičius, kiek kartų iškrito herbas.
