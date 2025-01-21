@@ -46,6 +46,12 @@ function skaiciaiKasDesimt() {
   return skaiciai;
 }
 
+let n = 10;
+do {
+  console.log(n);
+  n += 10;
+} while (n <= 100);
+
 console.log("2. išvesti seką kas 10", skaiciaiKasDesimt());
 
 // 3. Perašyti pateikta ciklą for į ciklą while.
@@ -123,10 +129,16 @@ console.log(
 // countDigits(452) => 3
 // countDigits(19) => 2
 
-function kiekSimboliu(sk) {
-  return sk.toString().length;
-}
-console.log("6. Kokio ilgio skaičius", kiekSimboliu(459856878971645));
+// function kiekSimboliu(sk) {
+//   // return Math.abs(sk.toString().length);
+//   let rezult = 0;
+//   number = Math.abs(number);
+//   while (number > 0) {
+//     number = Math.floor(number / 10);
+//     rezult++;
+//   }
+// }
+// console.log("6. Kokio ilgio skaičius", kiekSimboliu(459856878971645));
 
 // 7. Matematikas, pastebėjęs gobšaus turtuolį pasiūlė tokį sandorį:
 // Pirmą dieną jis turtuoliui duos 1 mln. dolerių, o tas jam už tai sumokės 2
@@ -139,12 +151,12 @@ console.log("6. Kokio ilgio skaičius", kiekSimboliu(459856878971645));
 
 function kasKiekGaus() {
   let turtuolisGaus = 0;
-  let matematikasGaus = 2;
+  let matematikasGaus = 0.02;
   for (let i = 1; i <= 31; i++) {
     turtuolisGaus += 1;
     matematikasGaus *= 2;
   }
-  matematikasGaus = (matematikasGaus / 100 / 1000000).toFixed(1);
+  matematikasGaus = (matematikasGaus / 1000000).toFixed(1);
   return `Turtuoliui Matematikas sumokės ${turtuolisGaus} mln. $, tuo tarpu Turtuolis jam sumokės ${matematikasGaus} mln $`;
 }
 
