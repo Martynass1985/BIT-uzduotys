@@ -1,0 +1,28 @@
+.hidden {
+  margin: 0;
+  width: 0px;
+  height: 0px;
+  padding: 0rem;
+  overflow: hidden;
+}
+.quiz-container {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all ease-out 1s;
+  /* transition-duration: 2000; */
+}
+.question-block {
+  height: 100px;
+  width: 300px;
+}
+#dingstantis {
+  padding: 5px 10px 5px 10px;
+  color: white;
+  background: linear-gradient(
+    158deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 74%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
