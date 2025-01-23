@@ -53,7 +53,7 @@ function pradetiQuiz() {
 
   button.innerText = "Kitas klausimas";
   quizElementas.insertAdjacentElement("afterend", button);
-  button.onclick = pradetiQuiz2();
+  button.addEventListener = pradetiQuiz2();
 }
 
 function pradetiQuiz2() {
