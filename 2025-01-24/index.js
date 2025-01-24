@@ -134,10 +134,10 @@ function pakeistiStrinIStringIlgi(masyvas) {
 
 console.log(pakeistiStrinIStringIlgi(obuolys));
 
-function stringIlgis(arr) {
-  return arr.map((str) => str.length);
-}
+// function stringIlgis(arr) {
+//   return arr.map((str) => str.length);
+// }
 
-let input = ["", "a", "bc", "def", "ghij"];
-let output = stringIlgis(input);
-console.log(output);
+// let input = ["", "a", "bc", "def", "ghij"];
+// let output = stringIlgis(input);
+// console.log(output);
