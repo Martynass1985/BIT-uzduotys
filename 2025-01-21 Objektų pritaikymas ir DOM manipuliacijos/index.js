@@ -2,10 +2,10 @@ const questions = [
   {
     question: "1. Kas yra 'let'?",
     answers: ["Kintamasis", "Funkcija", "Ciklas", "DOM elementas"],
-    correctAnswer: 0, // Indeksas teisingo atsakymo
+    correctAnswer: 0,
   },
   {
-    question: "<h3>2. Ką daro 'document.querySelector'?</h3>",
+    question: "2. Ką daro 'document.querySelector'?",
     answers: [
       "Keičia stilių",
       "Pasirenka DOM elementą",
@@ -14,7 +14,6 @@ const questions = [
     ],
     correctAnswer: 1,
   },
-
   {
     question: "3. Koks skirtumas tarp let, const, ir var?",
     answers: [
@@ -25,54 +24,282 @@ const questions = [
     ],
     correctAnswer: 3,
   },
+  {
+    question: "4. Koks skirtumas tarp `==` ir `===` operatorių?",
+    answers: [
+      "Nėra skirtumo",
+      "`==` tikrina reikšmes, o `===` tikrina tiek reikšmes, tiek tipo atitikimus",
+      "`===` konvertuoja tipus ir tada tikrina reikšmes",
+      "`==` tikrina tipo atitikimą, o `===` tikrina reikšmes",
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "5. Kokia yra `undefined` reikšmė JavaScript?",
+    answers: [
+      "Reikšmė, kai kintamasis nėra priskirtas",
+      "Reikšmė, kai kintamasis buvo ištrintas",
+      "Reikšmė, kurią grąžina tuščios funkcijos",
+      "Reikšmė, kuri yra visada apibrėžta",
+    ],
+    correctAnswer: 0,
+  },
+  {
+    question: "6. Ką grąžina funkcija, kai ji neturi `return` sakinio?",
+    answers: [
+      "undefined",
+      "null",
+      "false",
+      "Nieko, jos rezultatas bus tuščias",
+    ],
+    correctAnswer: 0,
+  },
+  {
+    question: "7. Koks rezultatas bus, kai atliksime `null == undefined`?",
+    answers: ["false", "true", "TypeError", "undefined"],
+    correctAnswer: 1,
+  },
+  {
+    question: "8. Kas yra JavaScript `closure`?",
+    answers: [
+      "Funkcija, kuri yra įvykdyta už jos apibrėžimo ribų",
+      "Funkcija, kuri turi prieigą prie savo aplinkinių kintamųjų",
+      "Funkcija, kuri gali būti iškviečiama tik vieną kartą",
+      "Reikšmė, kuri priskiriama kintamajam",
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "9. Ką veikia `this` JavaScript?",
+    answers: [
+      "Tai rodo į kintamąjį, kuris buvo priskirtas",
+      "Tai rodo į objekto metodą, kuris buvo iškviestas",
+      "Tai visada rodo į langą (window) arba globalų objektą",
+      "Tai rodo į funkciją, kurioje yra naudojamas",
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "10. Ką daro `setTimeout` funkcija?",
+    answers: [
+      "Paleidžia funkciją nedelsiant",
+      "Paleidžia funkciją po nustatyto laiko",
+      "Paleidžia funkciją kas tam tikrą laiką",
+      "Sustabdo vykdomą funkciją po nustatyto laiko",
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "11. Kas yra JavaScript `Promise`?",
+    answers: [
+      "Objektas, kuris apdoroja asinchroninius uždavinius",
+      "Funkcija, kuri apdoroja klaidas",
+      "Funkcija, kuri vykdoma sinchroniškai",
+      "Objektas, kuris užtikrina teisingus duomenų tipus",
+    ],
+    correctAnswer: 0,
+  },
+  {
+    question: "12. Ką veikia `Object.freeze()`?",
+    answers: [
+      "Sustabdo objektą nuo naujų savybių priskyrimo",
+      "Ištrina visas objekto savybes",
+      "Sustabdo objektą nuo kopijavimo",
+      "Apsaugo objektą nuo keitimo",
+    ],
+    correctAnswer: 3,
+  },
+  {
+    question:
+      "13. Kaip sukuriame naują objektą naudojant constructor funkciją?",
+    answers: [
+      "Naudojant `Object()`",
+      "Naudojant `new` raktinį žodį",
+      "Naudojant `class` raktinį žodį",
+      "Naudojant `createObject()`",
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "14. Kas yra 'hoisting' JavaScript'e?",
+    answers: [
+      "Funkcija, kuri yra automatiškai iškviečiama",
+      "Kintamųjų deklaracijos yra perkeliamas į viršų prieš vykdymą",
+      "Blokų lygio kintamieji yra pakelti į viršų",
+      "Kintamieji automatiškai priskiriami pradiniam 'undefined'",
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "15. Ką grąžina `NaN === NaN`?",
+    answers: ["true", "false", "undefined", "TypeError"],
+    correctAnswer: 1,
+  },
+  {
+    question: "16. Kas yra `NaN` JavaScript'e?",
+    answers: [
+      "Tai skaitinė reikšmė",
+      "Tai reikšmė, kuri rodo, kad operacija nesėkminga",
+      "Tai reikšmė, kuri nurodo tuščią kintamąjį",
+      "Tai klaida, atsirandanti dėl tipo neatitikimo",
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question:
+      "17. Koks yra `typeof` operatoriaus rezultatas, kai jis naudojamas su array?",
+    answers: ["object", "array", "undefined", "function"],
+    correctAnswer: 0,
+  },
+  {
+    question: "18. Kaip sukurti masyvą JavaScript'e?",
+    answers: [
+      "Naudojant `Array()`",
+      "Naudojant `new Array()`",
+      "Naudojant `[]`",
+      "Visi atsakymai yra teisingi",
+    ],
+    correctAnswer: 3,
+  },
+  {
+    question: "19. Kas bus, kai atliksime `typeof null`?",
+    answers: ["object", "null", "undefined", "false"],
+    correctAnswer: 0,
+  },
+  {
+    question: "20. Kaip pašalinti paskutinį elementą iš masyvo?",
+    answers: [
+      "Naudojant `delete` operatorių",
+      "Naudojant `pop()` metodą",
+      "Naudojant `shift()` metodą",
+      "Naudojant `remove()` metodą",
+    ],
+    correctAnswer: 1,
+  },
 ];
 
+let dabartinioKlausimoIndeksas = 0;
+let pasirinktasAts = [];
+let timer;
+let timeRemaining = 200;
+
 function pradetiQuiz() {
-  const dingstMygtukas = document.querySelector("#dingstantis");
-  dingstMygtukas.classList.add("hidden");
-  const quizElementas = document.querySelector("#quizContainer");
-  quizElementas.classList.remove("quiz-container");
-  quizElementas.classList.add("question-block");
-  const h3 = document.createElement("h3");
-  h3.id = "klausimas";
-  h3.innerText = questions[0].question;
-  h3.style.marginLeft = "20px";
-  quizElementas.insertAdjacentElement("beforebegin", h3);
-  const sujungtasMasyvas =
-    '<a href=""><li>' +
-    questions[0].answers.join('</li></a><a href=""><li>') +
-    "</a></li>";
-  quizElementas.innerHTML = "<ul>" + sujungtasMasyvas + "</ul>";
-  let button = document.createElement("button");
-  button.style.padding = "5px 10px 5px 10px";
-  button.style.color = "white";
-  button.style.background =
-    "linear-gradient(158deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 74%, rgba(252,176,69,1) 100%)";
-  button.style.borderRadius = "5px";
-  button.id = "kitasKlausimas";
-
-  button.innerText = "Kitas klausimas";
-  quizElementas.insertAdjacentElement("afterend", button);
-  button.addEventListener = pradetiQuiz2();
+  const startButton = document.querySelector("#dingstantis");
+  startButton.style.display = "none";
+  sekantisKlausimas();
 }
 
-function pradetiQuiz2() {
-  const quizElementas = document.querySelector("#quizContainer");
-  const klausimoElemantas = document.querySelector("#klausimas");
+function sekantisKlausimas() {
+  const question = questions[dabartinioKlausimoIndeksas];
+  let klausimoHTML = `
+    <h3>${dabartinioKlausimoIndeksas + 1}. Klausimas</h3>
+    <fieldset class="question" name="html-question-${dabartinioKlausimoIndeksas}">
+      <legend><b><i>${question.question}</i></b></legend>
+      <ul class="atsakymu-sarasas">`;
 
-  klausimoElemantas.innerText = questions[1].question;
+  for (let i = 0; i < question.answers.length; i++) {
+    klausimoHTML += `
+      <li>
+        <label for="atsakymas${i + 1}"></label>
+        <input
+          type="radio"
+          id="atsakymas${i + 1}"
+          name="atsakymas"
+          value="${question.answers[i]}"
+        />
+        ${question.answers[i]}
+      </li>`;
+  }
 
-  const sujungtasMasyvas =
-    '<a href=""><li>' +
-    questions[1].answers.join('</li></a><a href=""><li>') +
-    "</a></li>";
-  quizElementas.innerHTML = "<ul>" + sujungtasMasyvas + "</ul>";
-  //   let button = document.createElement("button");
-  //   button.innerText = "Kitas klausimas";
-  //   quizElementas.insertAdjacentElement("afterend", button);
-  //   button.addEventListener("click", pradetiQuiz2());
+  klausimoHTML += `
+    </ul>
+  </fieldset>`;
 
-  //   for (let i = 0; i < questions.length; i++) {
+  klausimoHTML += `<div id="timer">Likęs laikas: ${timeRemaining}s</div>`;
 
-  //   }
+  if (dabartinioKlausimoIndeksas < questions.length - 1) {
+    klausimoHTML += `<button id="dingstantis" onclick="nextQuestion()">Sekantis klausimas</button>`;
+  } else {
+    klausimoHTML += `<button id="dingstantis" onclick="finishQuiz()">Baigti Quiz</button>`;
+  }
+
+  const quizElementas = document.querySelector("#quiz-container");
+  quizElementas.innerHTML = klausimoHTML;
+
+  startTimer();
 }
+
+function startTimer() {
+  timeRemaining = 200;
+  const timerElement = document.querySelector("#timer");
+
+  timer = setInterval(function () {
+    timeRemaining--;
+    timerElement.textContent = `Likęs laikas: ${timeRemaining}s`;
+
+    if (timeRemaining <= 0) {
+      clearInterval(timer);
+      nextQuestion();
+    }
+  }, 1000);
+}
+
+function nextQuestion() {
+  const pasirinktas = document.querySelector('input[name="atsakymas"]:checked');
+  if (!pasirinktas) {
+    alert("Pasirinkite atsakymą prieš pereidami prie kito klausimo.");
+    return;
+  }
+  pasirinktasAts[dabartinioKlausimoIndeksas] = pasirinktas.value;
+  dabartinioKlausimoIndeksas++;
+  clearInterval(timer);
+  sekantisKlausimas();
+}
+
+function finishQuiz() {
+  const pasirinktas = document.querySelector('input[name="atsakymas"]:checked');
+  if (!pasirinktas) {
+    alert("Prieš baigdami - Pasirinkite atsakymą.");
+    return;
+  } else if (pasirinktas) {
+    pasirinktasAts[dabartinioKlausimoIndeksas] = pasirinktas.value;
+  }
+
+  let klausimoHTML = "<h3>Quiz baigtas!</h3>";
+
+  let taskai = 0;
+  questions.forEach((question, index) => {
+    const pasirinktas = pasirinktasAts[index];
+    if (pasirinktas === question.answers[question.correctAnswer]) {
+      taskai++;
+    }
+  });
+
+  klausimoHTML += `<p>Jūsų rezultatas: ${taskai} iš ${questions.length}</p>`;
+
+  klausimoHTML += "<h4>Jūsų atsakymai:</h4><ul>";
+  questions.forEach((question, index) => {
+    klausimoHTML += `
+      <li><b>${question.question}</b><br>
+        Jūsų atsakymas: ${pasirinktasAts[index] || "Nepasirinktas"}<br>
+        Teisingas atsakymas: ${question.answers[question.correctAnswer]}
+      </li>`;
+  });
+  klausimoHTML += "</ul>";
+
+  klausimoHTML += `<button id="dingstantis" onclick="pradetiIsNaujo()">Pradėti iš naujo</button>`;
+  const quizElementas = document.querySelector("#quiz-container");
+  quizElementas.innerHTML = klausimoHTML;
+}
+
+function pradetiIsNaujo() {
+  dabartinioKlausimoIndeksas = 0;
+  pasirinktasAts = [];
+  const startButton = document.querySelector("#dingstantis");
+  startButton.style.display = "inline-block";
+  const quizElementas = document.querySelector("#quiz-container");
+  quizElementas.innerHTML = `<button id="dingstantis" onclick="pradetiQuiz()">Pradėti QUIZ</button>`;
+}
+
+const startButton = document.querySelector("#dingstantis");
+startButton.addEventListener("click", pradetiQuiz);

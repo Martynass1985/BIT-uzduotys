@@ -1,24 +1,8 @@
-.hidden {
-  margin: 0;
-  width: 0px;
-  height: 0px;
-  padding: 0rem;
-  overflow: hidden;
-}
-.quiz-container {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  transition: all ease-out 1s;
-  /* transition-duration: 2000; */
-}
-.question-block {
-  height: 100px;
-  width: 300px;
-}
 #dingstantis {
-  padding: 5px 10px 5px 10px;
+  margin-top: 20px;
+  width: 80px;
   color: white;
+  border-radius: 8px;
   background: linear-gradient(
     158deg,
     rgba(131, 58, 180, 1) 0%,
