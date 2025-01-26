@@ -104,7 +104,7 @@ const questions = [
 let dabartinioKlausimoIndeksas = 0;
 let pasirinktasAts = [];
 let laikmatis;
-let likesLaikas = 50;
+let likesLaikas = 20;
 
 function pradetiQuiz() {
   const pradetiMygtukas = document.querySelector("#dingstantis");
@@ -152,7 +152,7 @@ function sekantisKlausimas() {
 }
 
 function pradetiLaikmati() {
-  likesLaikas = 50;
+  likesLaikas = 20;
   const laikoElementas = document.querySelector("#laikmatis");
 
   laikmatis = setInterval(function () {
@@ -169,10 +169,20 @@ function pradetiLaikmati() {
 function nextQuestion() {
   const pasirinktas = document.querySelector('input[name="atsakymas"]:checked');
   if (!pasirinktas && dabartinioKlausimoIndeksas < questions.length) {
-    alert("Pasirinkite atsakymą prieš pereidami prie kito klausimo.");
+    const quizElementas = document.querySelector("#quiz-container");
+    const messageElement = document.createElement("p");
+    messageElement.style.color = "red";
+    messageElement.textContent =
+      "Pasirinkite atsakymą prieš pereidami prie kito klausimo.";
+    if (!document.querySelector("#message")) {
+      messageElement.id = "message";
+      quizElementas.appendChild(messageElement);
+    }
     return;
   }
-  pasirinktasAts[dabartinioKlausimoIndeksas] = pasirinktas.value;
+  if (pasirinktas) {
+    pasirinktasAts[dabartinioKlausimoIndeksas] = pasirinktas.value;
+  }
   dabartinioKlausimoIndeksas++;
   clearInterval(laikmatis);
   sekantisKlausimas();
@@ -181,16 +191,12 @@ function nextQuestion() {
 function pabaigtiQuiz() {
   const pasirinktas = document.querySelector('input[name="atsakymas"]:checked');
   if (!pasirinktas) {
-    alert("Prieš baigdami - Pasirinkite atsakymą.");
     return;
   } else if (pasirinktas) {
     pasirinktasAts[dabartinioKlausimoIndeksas] = pasirinktas.value;
   }
-
   clearInterval(laikmatis);
-
   let klausimoHTML = "<h3>Quiz baigtas!</h3>";
-
   let taskai = 0;
   questions.forEach((question, index) => {
     const pasirinktas = pasirinktasAts[index];
@@ -198,9 +204,7 @@ function pabaigtiQuiz() {
       taskai++;
     }
   });
-
   klausimoHTML += `<p>Jūsų rezultatas: ${taskai} iš ${questions.length}</p>`;
-
   klausimoHTML += "<h4>Jūsų atsakymai:</h4><ul>";
   questions.forEach((question, index) => {
     klausimoHTML += `
@@ -224,7 +228,7 @@ function pradetiIsNaujo() {
   const quizElementas = document.querySelector("#quiz-container");
   quizElementas.innerHTML = `<button id="dingstantis" onclick="pradetiQuiz()">Pradėti QUIZ</button>`;
   clearInterval(laikmatis);
-  likesLaikas = 50;
+  likesLaikas = 20;
 }
 
 const pradetiMygtukas = document.querySelector("#dingstantis");
