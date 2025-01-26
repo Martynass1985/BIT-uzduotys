@@ -180,12 +180,12 @@ const questions = [
 
 let dabartinioKlausimoIndeksas = 0;
 let pasirinktasAts = [];
-let timer;
-let timeRemaining = 200;
+let laikmatis;
+let likesLaikas = 20;
 
 function pradetiQuiz() {
-  const startButton = document.querySelector("#dingstantis");
-  startButton.style.display = "none";
+  const pradetiMygtukas = document.querySelector("#dingstantis");
+  pradetiMygtukas.style.display = "none";
   sekantisKlausimas();
 }
 
@@ -215,33 +215,33 @@ function sekantisKlausimas() {
     </ul>
   </fieldset>`;
 
-  klausimoHTML += `<div id="timer">Likęs laikas: ${timeRemaining}s</div>`;
+  klausimoHTML += `<div id="laikmatis">Likęs laikas: ${likesLaikas}s</div>`;
 
   if (dabartinioKlausimoIndeksas < questions.length - 1) {
     klausimoHTML += `<button id="dingstantis" onclick="nextQuestion()">Sekantis klausimas</button>`;
   } else {
-    klausimoHTML += `<button id="dingstantis" onclick="finishQuiz()">Baigti Quiz</button>`;
+    klausimoHTML += `<button id="dingstantis" onclick="pabaigtiQuiz()">Baigti Quiz</button>`;
   }
 
   const quizElementas = document.querySelector("#quiz-container");
   quizElementas.innerHTML = klausimoHTML;
 
-  startTimer();
+  pradetiLaikmati();
 }
 
-function startTimer() {
-  timeRemaining = 200;
-  const timerElement = document.querySelector("#timer");
+function pradetiLaikmati() {
+  likesLaikas = 20;
+  const laikoElementas = document.querySelector("#laikmatis");
 
-  timer = setInterval(function () {
-    timeRemaining--;
-    timerElement.textContent = `Likęs laikas: ${timeRemaining}s`;
+  laikmatis = setInterval(function () {
+    likesLaikas--;
+    laikoElementas.textContent = `Likęs laikas: ${likesLaikas}s`;
 
-    if (timeRemaining <= 0) {
-      clearInterval(timer);
+    if (likesLaikas <= 0) {
+      clearInterval(laikmatis);
       nextQuestion();
     }
-  }, 1000);
+  }, 2000);
 }
 
 function nextQuestion() {
@@ -252,11 +252,11 @@ function nextQuestion() {
   }
   pasirinktasAts[dabartinioKlausimoIndeksas] = pasirinktas.value;
   dabartinioKlausimoIndeksas++;
-  clearInterval(timer);
+  clearInterval(laikmatis);
   sekantisKlausimas();
 }
 
-function finishQuiz() {
+function pabaigtiQuiz() {
   const pasirinktas = document.querySelector('input[name="atsakymas"]:checked');
   if (!pasirinktas) {
     alert("Prieš baigdami - Pasirinkite atsakymą.");
@@ -295,11 +295,11 @@ function finishQuiz() {
 function pradetiIsNaujo() {
   dabartinioKlausimoIndeksas = 0;
   pasirinktasAts = [];
-  const startButton = document.querySelector("#dingstantis");
-  startButton.style.display = "inline-block";
+  const pradetiMygtukas = document.querySelector("#dingstantis");
+  pradetiMygtukas.style.display = "inline-block";
   const quizElementas = document.querySelector("#quiz-container");
   quizElementas.innerHTML = `<button id="dingstantis" onclick="pradetiQuiz()">Pradėti QUIZ</button>`;
 }
 
-const startButton = document.querySelector("#dingstantis");
-startButton.addEventListener("click", pradetiQuiz);
+const pradetiMygtukas = document.querySelector("#dingstantis");
+pradetiMygtukas.addEventListener("click", pradetiQuiz);
