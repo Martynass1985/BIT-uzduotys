@@ -60,27 +60,7 @@ const questions = [
     correctAnswer: 1,
   },
   {
-    question: "8. Kas yra JavaScript `closure`?",
-    answers: [
-      "Funkcija, kuri yra įvykdyta už jos apibrėžimo ribų",
-      "Funkcija, kuri turi prieigą prie savo aplinkinių kintamųjų",
-      "Funkcija, kuri gali būti iškviečiama tik vieną kartą",
-      "Reikšmė, kuri priskiriama kintamajam",
-    ],
-    correctAnswer: 1,
-  },
-  {
-    question: "9. Ką veikia `this` JavaScript?",
-    answers: [
-      "Tai rodo į kintamąjį, kuris buvo priskirtas",
-      "Tai rodo į objekto metodą, kuris buvo iškviestas",
-      "Tai visada rodo į langą (window) arba globalų objektą",
-      "Tai rodo į funkciją, kurioje yra naudojamas",
-    ],
-    correctAnswer: 1,
-  },
-  {
-    question: "10. Ką daro `setTimeout` funkcija?",
+    question: "8. Ką daro `setTimeout` funkcija?",
     answers: [
       "Paleidžia funkciją nedelsiant",
       "Paleidžia funkciją po nustatyto laiko",
@@ -90,69 +70,12 @@ const questions = [
     correctAnswer: 1,
   },
   {
-    question: "11. Kas yra JavaScript `Promise`?",
-    answers: [
-      "Objektas, kuris apdoroja asinchroninius uždavinius",
-      "Funkcija, kuri apdoroja klaidas",
-      "Funkcija, kuri vykdoma sinchroniškai",
-      "Objektas, kuris užtikrina teisingus duomenų tipus",
-    ],
-    correctAnswer: 0,
-  },
-  {
-    question: "12. Ką veikia `Object.freeze()`?",
-    answers: [
-      "Sustabdo objektą nuo naujų savybių priskyrimo",
-      "Ištrina visas objekto savybes",
-      "Sustabdo objektą nuo kopijavimo",
-      "Apsaugo objektą nuo keitimo",
-    ],
-    correctAnswer: 3,
-  },
-  {
-    question:
-      "13. Kaip sukuriame naują objektą naudojant constructor funkciją?",
-    answers: [
-      "Naudojant `Object()`",
-      "Naudojant `new` raktinį žodį",
-      "Naudojant `class` raktinį žodį",
-      "Naudojant `createObject()`",
-    ],
-    correctAnswer: 1,
-  },
-  {
-    question: "14. Kas yra 'hoisting' JavaScript'e?",
-    answers: [
-      "Funkcija, kuri yra automatiškai iškviečiama",
-      "Kintamųjų deklaracijos yra perkeliamas į viršų prieš vykdymą",
-      "Blokų lygio kintamieji yra pakelti į viršų",
-      "Kintamieji automatiškai priskiriami pradiniam 'undefined'",
-    ],
-    correctAnswer: 1,
-  },
-  {
-    question: "15. Ką grąžina `NaN === NaN`?",
+    question: "9. Ką grąžina `NaN === NaN`?",
     answers: ["true", "false", "undefined", "TypeError"],
     correctAnswer: 1,
   },
   {
-    question: "16. Kas yra `NaN` JavaScript'e?",
-    answers: [
-      "Tai skaitinė reikšmė",
-      "Tai reikšmė, kuri rodo, kad operacija nesėkminga",
-      "Tai reikšmė, kuri nurodo tuščią kintamąjį",
-      "Tai klaida, atsirandanti dėl tipo neatitikimo",
-    ],
-    correctAnswer: 1,
-  },
-  {
-    question:
-      "17. Koks yra `typeof` operatoriaus rezultatas, kai jis naudojamas su array?",
-    answers: ["object", "array", "undefined", "function"],
-    correctAnswer: 0,
-  },
-  {
-    question: "18. Kaip sukurti masyvą JavaScript'e?",
+    question: "10. Kaip sukurti masyvą JavaScript'e?",
     answers: [
       "Naudojant `Array()`",
       "Naudojant `new Array()`",
@@ -162,12 +85,12 @@ const questions = [
     correctAnswer: 3,
   },
   {
-    question: "19. Kas bus, kai atliksime `typeof null`?",
+    question: "11. Kas bus, kai atliksime `typeof null`?",
     answers: ["object", "null", "undefined", "false"],
     correctAnswer: 0,
   },
   {
-    question: "20. Kaip pašalinti paskutinį elementą iš masyvo?",
+    question: "12. Kaip pašalinti paskutinį elementą iš masyvo?",
     answers: [
       "Naudojant `delete` operatorių",
       "Naudojant `pop()` metodą",
