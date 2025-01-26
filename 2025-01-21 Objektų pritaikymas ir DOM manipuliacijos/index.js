@@ -104,7 +104,7 @@ const questions = [
 let dabartinioKlausimoIndeksas = 0;
 let pasirinktasAts = [];
 let laikmatis;
-let likesLaikas = 20;
+let likesLaikas = 50;
 
 function pradetiQuiz() {
   const pradetiMygtukas = document.querySelector("#dingstantis");
@@ -148,12 +148,11 @@ function sekantisKlausimas() {
 
   const quizElementas = document.querySelector("#quiz-container");
   quizElementas.innerHTML = klausimoHTML;
-
-  pradetiLaikmati();
+  if (dabartinioKlausimoIndeksas <= questions.length) pradetiLaikmati();
 }
 
 function pradetiLaikmati() {
-  likesLaikas = 20;
+  likesLaikas = 50;
   const laikoElementas = document.querySelector("#laikmatis");
 
   laikmatis = setInterval(function () {
@@ -169,7 +168,7 @@ function pradetiLaikmati() {
 
 function nextQuestion() {
   const pasirinktas = document.querySelector('input[name="atsakymas"]:checked');
-  if (!pasirinktas) {
+  if (!pasirinktas && dabartinioKlausimoIndeksas < questions.length) {
     alert("Pasirinkite atsakymą prieš pereidami prie kito klausimo.");
     return;
   }
@@ -187,6 +186,8 @@ function pabaigtiQuiz() {
   } else if (pasirinktas) {
     pasirinktasAts[dabartinioKlausimoIndeksas] = pasirinktas.value;
   }
+
+  clearInterval(laikmatis);
 
   let klausimoHTML = "<h3>Quiz baigtas!</h3>";
 
@@ -222,6 +223,8 @@ function pradetiIsNaujo() {
   pradetiMygtukas.style.display = "inline-block";
   const quizElementas = document.querySelector("#quiz-container");
   quizElementas.innerHTML = `<button id="dingstantis" onclick="pradetiQuiz()">Pradėti QUIZ</button>`;
+  clearInterval(laikmatis);
+  likesLaikas = 50;
 }
 
 const pradetiMygtukas = document.querySelector("#dingstantis");
