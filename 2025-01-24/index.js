@@ -124,20 +124,20 @@ console.log(dvigubasMasyvas([0, 1, 2, 3]));
 // [ '', 'a', 'bc', 'def', 'ghij' ] => [ 0, 1, 2, 3, 4 ]
 // [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
 
-const obuolys = ["angular", "react", "ember"];
-function pakeistiStrinIStringIlgi(masyvas) {
-  for (let i = 0; i < masyvas.length; i++) {
-    masyvas.splice(i, 1, masyvas[i].length);
-  }
-  return masyvas;
-}
-
-console.log(pakeistiStrinIStringIlgi(obuolys));
-
-// function stringIlgis(arr) {
-//   return arr.map((str) => str.length);
+// const obuolys = ["angular", "react", "ember"];
+// function pakeistiStrinIStringIlgi(masyvas) {
+//   for (let i = 0; i < masyvas.length; i++) {
+//     masyvas.splice(i, 1, masyvas[i].length);
+//   }
+//   return masyvas;
 // }
 
-// let input = ["", "a", "bc", "def", "ghij"];
-// let output = stringIlgis(input);
-// console.log(output);
+// console.log(pakeistiStrinIStringIlgi(obuolys));
+
+function stringIlgis(arr) {
+  return arr.map((str) => str.length);
+}
+
+let input = ["", "a", "bc", "def", "ghij"];
+let output = stringIlgis(input);
+console.log(output);

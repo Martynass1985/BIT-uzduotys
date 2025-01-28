@@ -104,7 +104,7 @@ const questions = [
 let dabartinioKlausimoIndeksas = 0;
 let pasirinktasAts = [];
 let laikmatis;
-let likesLaikas = 20;
+let likesLaikas;
 
 function pradetiQuiz() {
   const pradetiMygtukas = document.querySelector("#dingstantis");
@@ -155,10 +155,9 @@ function pradetiLaikmati() {
   likesLaikas = 20;
   const laikoElementas = document.querySelector("#laikmatis");
 
-  laikmatis = setInterval(function () {
+  laikmatis = setInterval(() => {
     likesLaikas--;
     laikoElementas.textContent = `Likęs laikas: ${likesLaikas}s`;
-
     if (likesLaikas <= 0) {
       clearInterval(laikmatis);
       nextQuestion();
