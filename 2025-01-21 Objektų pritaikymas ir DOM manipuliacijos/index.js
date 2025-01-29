@@ -104,7 +104,7 @@ const questions = [
 let dabartinioKlausimoIndeksas = 0;
 let pasirinktasAts = [];
 let laikmatis;
-let likesLaikas;
+let likesLaikas = 20;
 
 function pradetiQuiz() {
   const pradetiMygtukas = document.querySelector("#dingstantis");
@@ -137,7 +137,7 @@ function sekantisKlausimas() {
   klausimoHTML += `
     </ul>
   </fieldset>`;
-
+  console.log("test");
   klausimoHTML += `<div id="laikmatis">Likęs laikas: ${likesLaikas}s</div>`;
 
   if (dabartinioKlausimoIndeksas < questions.length - 1) {
@@ -145,16 +145,15 @@ function sekantisKlausimas() {
   } else {
     klausimoHTML += `<button id="dingstantis" onclick="pabaigtiQuiz()">Baigti Quiz</button>`;
   }
-
   const quizElementas = document.querySelector("#quiz-container");
+
   quizElementas.innerHTML = klausimoHTML;
   if (dabartinioKlausimoIndeksas <= questions.length) pradetiLaikmati();
 }
 
 function pradetiLaikmati() {
-  likesLaikas = 20;
   const laikoElementas = document.querySelector("#laikmatis");
-
+  console.log("pradejau laikmati");
   laikmatis = setInterval(() => {
     likesLaikas--;
     laikoElementas.textContent = `Likęs laikas: ${likesLaikas}s`;
@@ -162,7 +161,7 @@ function pradetiLaikmati() {
       clearInterval(laikmatis);
       nextQuestion();
     }
-  }, 2000);
+  }, 1000);
 }
 
 function nextQuestion() {
