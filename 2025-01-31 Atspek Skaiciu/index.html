@@ -12,18 +12,34 @@
   </head>
   <body>
     <div class="background">
-      <h1>Skaičių spėjimo Žaidimas</h1>
-      <hr />
-      <div id="game">
-        <form id="myForm">
-          <input
-            type="number"
-            min="1"
-            max="100"
-            placeholder="Įveskite skaičių nuo 1 iki 100"
-          />
-          <button type="submit">Pasirinkti</button>
-        </form>
+      <div class="container">
+        <h1>Skaičių spėjimo Žaidimas</h1>
+        <hr />
+        <div id="game">
+          <form id="myForm">
+            <input
+              title="Pasirinkite skaičių nu 1 iki 100"
+              type="number"
+              min="1"
+              max="100"
+              placeholder="Įveskite skaičių nuo 1 iki 100"
+              required
+            />
+            <button type="submit">Pasirinkti</button>
+          </form>
+        </div>
+
+        <hr />
+        <div class="pasirinkimo-div">
+          <h3>Jūsų pasirinktas Skaičius:</h3>
+          <div id="pasirinktas">5000</div>
+        </div>
+        <hr />
+        <div class="iskritusio-div">
+          <h3>Iškritęs Skaičius:</h3>
+          <div id="iskrites">5000</div>
+        </div>
+        <hr />
       </div>
     </div>
     <script src="index.js"></script>

@@ -4,9 +4,21 @@
   color: white;
   padding: 0;
   margin: 0;
+}
+.background {
   background: url("./assets/tree_tunnel-wallpaper-1366x768.jpg");
+  min-height: 800px;
+  background-repeat: no-repeat;
+}
+.container {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 h1 {
+  color: gold;
+  background: transparent;
   margin: 20px;
   text-align: center;
 }
@@ -46,9 +58,48 @@ button:active {
 }
 
 input {
-  margin-left: 50px;
-  margin-top: 50px;
+  background: transparent;
+  margin: 50px 0 50px 50px;
   font-size: 18px;
   height: 48px;
   width: 300px;
+}
+
+h3 {
+  flex-wrap: wrap;
+
+  background: transparent;
+  margin: 40px;
+}
+
+div.pasirinkimo-div,
+div.iskritusio-div {
+  display: flex;
+  gap: 50px;
+  font-size: 32px;
+  margin: 0 auto;
+  align-items: center;
+  background: transparent;
+}
+
+div#pasirinktas,
+div#iskrites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 120px;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(70, 137, 19, 0.5);
+  border-radius: 300px;
+  margin: 20px;
+  color: gold;
+}
+#game {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  button {
+    margin-left: 20px;
+  }
 }
