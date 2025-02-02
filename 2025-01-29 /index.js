@@ -17,9 +17,7 @@ const prekes = [
 // Rezultatą console.log’inkite
 
 const barkodoMod = prekes.map((preke) => {
-  let pirmaRaide = preke.pavadinimas.at(0).toUpperCase();
-  let naujasBarkodas = pirmaRaide + "-" + preke.barkodas;
-  preke.barkodas = naujasBarkodas;
+  preke.barkodas = preke.pavadinimas[0] + "-" + preke.barkodas;
   return preke;
 });
 
@@ -45,14 +43,13 @@ console.log("4.", isfiltruotiMazesnesUztris);
 // 5 Užduotis: Išfiltruokite prekes, kurios kainuoja daugiau nei 1 eur ir mažiau nei 3 eur.
 
 const isfiltruotiMazesnesUztrisIrDidUz1 = prekes.filter(
-  (p) => p.kaina < 3 && p.kaina > 1
+  (p) => p.kaina <= 3 && p.kaina >= 1
 );
 console.log("5.", isfiltruotiMazesnesUztrisIrDidUz1);
 
 // 6 Užduotis: Raskite prekę, kurios pavadinimas: ‘Kava’. Jos reikšmę pakeiskite į ‘Kavos pupelės’.
 
 const pakeistiKava = prekes.findIndex((p) => p.pavadinimas === "Kava");
-
 if (pakeistiKava !== -1) {
   prekes[pakeistiKava].pavadinimas = "Kavos pupelės";
 }
