@@ -103,7 +103,7 @@ const questions = [
 
 let dabartinioKlausimoIndeksas = 0;
 let pasirinktasAts = [];
-let laikmatis;
+let laikmatis = 20;
 let likesLaikas = 20;
 
 function pradetiQuiz() {
@@ -148,7 +148,9 @@ function sekantisKlausimas() {
   const quizElementas = document.querySelector("#quiz-container");
 
   quizElementas.innerHTML = klausimoHTML;
-  if (dabartinioKlausimoIndeksas <= questions.length) pradetiLaikmati();
+  clearInterval(laikmatis);
+  likesLaikas = 20; // Resetuoja laikmatis
+  pradetiLaikmati(); // Paleidžia laikmatį iš naujo
 }
 
 function pradetiLaikmati() {
