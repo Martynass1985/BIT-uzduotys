@@ -10,6 +10,10 @@ let randomNumberResult = 0;
 let hasGuessed = false;
 let results = [];
 
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 skaiciuParinkimasForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const selectedValue = document.querySelector("#parinktis").value;
@@ -78,10 +82,6 @@ function randomNumber() {
 }
 
 atsitiktinioSkElementas.addEventListener("click", randomNumber);
-
-function rand(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 window.onload = function () {
   const savedResults = localStorage.getItem("gameResults");

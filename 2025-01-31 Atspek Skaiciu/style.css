@@ -9,8 +9,7 @@
 .background {
   background: url("./assets/tree_tunnel-wallpaper-1366x768.jpg");
   min-height: 800px;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat-y;
 }
 .container {
   max-width: 1000px;
