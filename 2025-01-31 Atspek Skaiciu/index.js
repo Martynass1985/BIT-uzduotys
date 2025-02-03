@@ -3,14 +3,12 @@ const pasirinkimoElementas = document.querySelector("#pasirinktas");
 const iskritusioElementas = document.querySelector("#iskrites");
 const atsitiktinioSkElementas = document.querySelector("#random");
 const skaiciuParinkimasForm = document.querySelector("#skaiciu-parinkimas");
+const resultsTableBody = document.querySelector("#resultsTable tbody");
 
 let maxNumber = 10;
-let randomNumberResult = 1;
+let randomNumberResult = 0;
 let hasGuessed = false;
-
-function rand(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+let results = [];
 
 skaiciuParinkimasForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -51,7 +49,22 @@ function chooseNumber(event) {
   document.querySelector("#resultMessage").innerHTML = resultMessage;
   hasGuessed = true;
   iskritusioElementas.innerHTML = randomNumberResult;
+
+  const resultRow = document.createElement("tr");
+  resultRow.innerHTML = `
+    <td>${userInput}</td>
+    <td>${randomNumberResult}</td>
+    <td>${resultMessage}</td>
+  `;
+  resultsTableBody.appendChild(resultRow);
+
+  results.push({
+    guessedNumber: userInput,
+    randomNumber: randomNumberResult,
+    resultMessage: resultMessage,
+  });
   document.querySelector("#pasirinktasSkaicius").value = "";
+  localStorage.setItem("gameResults", JSON.stringify(results));
 }
 
 inputElementas.addEventListener("submit", chooseNumber);
@@ -65,3 +78,24 @@ function randomNumber() {
 }
 
 atsitiktinioSkElementas.addEventListener("click", randomNumber);
+
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+window.onload = function () {
+  const savedResults = localStorage.getItem("gameResults");
+  if (savedResults) {
+    results = JSON.parse(savedResults);
+
+    results.forEach((result) => {
+      const resultRow = document.createElement("tr");
+      resultRow.innerHTML = `
+        <td>${result.guessedNumber}</td>
+        <td>${result.randomNumber}</td>
+        <td>${result.resultMessage}</td>
+      `;
+      resultsTableBody.appendChild(resultRow);
+    });
+  }
+};
