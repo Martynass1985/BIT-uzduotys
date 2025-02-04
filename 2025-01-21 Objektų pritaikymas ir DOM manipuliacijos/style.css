@@ -33,7 +33,7 @@ body {
   margin: 20px 65px;
 }
 #message {
-  margin: 10px 0 10px 50px;
+  margin: 10px 0 10px 40px;
 }
 
 h1,
@@ -52,7 +52,7 @@ button {
   margin: 0 auto;
 }
 .background {
-  padding-top: 10px;
+  padding-top: 20px;
   min-height: 1200px;
   background-size: 100%;
   background: rgba(147, 206, 222, 1);
