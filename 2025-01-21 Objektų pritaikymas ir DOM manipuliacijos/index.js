@@ -137,7 +137,6 @@ function sekantisKlausimas() {
   klausimoHTML += `
     </ul>
   </fieldset>`;
-  console.log("test");
   klausimoHTML += `<div id="laikmatis">Likęs laikas: ${likesLaikas}s</div>`;
 
   if (dabartinioKlausimoIndeksas < questions.length - 1) {
@@ -149,8 +148,8 @@ function sekantisKlausimas() {
 
   quizElementas.innerHTML = klausimoHTML;
   clearInterval(laikmatis);
-  likesLaikas = 20; // Resetuoja laikmatis
-  pradetiLaikmati(); // Paleidžia laikmatį iš naujo
+  likesLaikas = 20;
+  pradetiLaikmati();
 }
 
 function pradetiLaikmati() {
