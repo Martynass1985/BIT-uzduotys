@@ -2,22 +2,21 @@
 const vardas = document.getElementById("vardas");
 const pavarde = document.getElementById("pavarde");
 const numeris = document.getElementById("numeris");
-
+const form = document.getElementById("formField");
 const vardasError = document.getElementById("vardasError");
 const pavardeError = document.getElementById("pavardeError");
 const numerisError = document.getElementById("numerisError");
 
-function capitalizeFirstLetter(value) {
+function pirmaDidzioji(value) {
   return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
-// Automatiškai konvertuojame pirmąją raidę į didžiąją
 vardas.addEventListener("input", () => {
-  vardas.value = capitalizeFirstLetter(vardas.value);
+  vardas.value = pirmaDidzioji(vardas.value);
 });
 
 pavarde.addEventListener("input", () => {
-  pavarde.value = capitalizeFirstLetter(pavarde.value);
+  pavarde.value = pirmaDidzioji(pavarde.value);
 });
 
 numeris.addEventListener("input", (event) => {
@@ -41,7 +40,8 @@ numeris.addEventListener("input", (event) => {
   event.target.value = sanitizedValue;
 });
 
-// Formos validacijos funkcija
+form.addEventListener("submit", validateForm);
+
 function validateForm(event) {
   event.preventDefault();
   let isValid = true;
@@ -52,14 +52,14 @@ function validateForm(event) {
   } else {
     vardasError.textContent = "";
   }
-  if (!validateSurname(pavarde.value)) {
+  if (!validateName(pavarde.value)) {
     pavardeError.textContent =
       "Pavardė turi būti nuo 3 iki 50 simbolių, prasidėti didžiąja raide ir turėti tik raides.";
     isValid = false;
   } else {
     pavardeError.textContent = "";
   }
-  if (!validateNumeris(numeris.value)) {
+  if (!validateNumber(numeris.value)) {
     numerisError.textContent =
       "Numeris turi būti 7 simbolių ilgio (3 raidės, brūkšnys ir 3 skaičiai).";
     isValid = false;
@@ -72,7 +72,6 @@ function validateForm(event) {
   }
 }
 
-// Vardo ir pavardės validacija
 function validateName(n) {
   if (n.length < 3 || n.length > 50) return false;
   if (n[0] !== n[0].toUpperCase()) return false;
@@ -89,25 +88,8 @@ function validateName(n) {
   }
   return true;
 }
-function validateSurname(s) {
-  if (s.length < 3 || s.length > 50) return false;
-  if (s[0] !== s[0].toUpperCase()) return false;
-  for (let i = 0; i < s.length; i++) {
-    const charCode = s.charCodeAt(i);
-    if (
-      !(
-        (charCode >= 65 && charCode <= 90) ||
-        (charCode >= 97 && charCode <= 122)
-      )
-    ) {
-      return false;
-    }
-  }
-  return true;
-}
 
-// Numerio validacija
-function validateNumeris(num) {
+function validateNumber(num) {
   if (num.length !== 7) return false;
   for (let i = 0; i < 3; i++) {
     const charCode = num.charCodeAt(i);
@@ -132,6 +114,3 @@ function clearInputs() {
   pavarde.value = "";
   numeris.value = "";
 }
-
-const form = document.getElementById("formField");
-form.addEventListener("submit", validateForm);
