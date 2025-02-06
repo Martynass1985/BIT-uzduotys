@@ -8,7 +8,7 @@ for (const breed in dogList.message) {
   const subtypes = dogList.message[breed];
   if (subtypes && typeof subtypes === "object" && subtypes.length > 0) {
     subtypes.forEach((subtype) => {
-      breedOptions.push(`${breed}-${subtype}`);
+      breedOptions.push(`${breed}/${subtype}`);
     });
   } else {
     breedOptions.push(breed);
@@ -19,7 +19,7 @@ breedOptions.forEach((breedOption) => {
   const optionElement = document.createElement("option");
   optionElement.value = breedOption;
   optionElement.textContent = `${
-    breedOption.at(0).toUpperCase() + breedOption.replace("-", " ").slice(1)
+    breedOption.at(0).toUpperCase() + breedOption.replace("/", " ").slice(1)
   }`;
   dogsSelect.appendChild(optionElement);
 });
@@ -27,7 +27,7 @@ breedOptions.forEach((breedOption) => {
 async function fetchDogImage(breed) {
   const dogBreed = document.getElementById("dogBreed");
   dogBreed.textContent = `${
-    breed.at(0).toUpperCase() + breed.replace("-", " ").slice(1)
+    breed.at(0).toUpperCase() + breed.replace("/", " ").slice(1)
   }`;
 
   if (breed.includes("-")) breed = breed.slice(0, breed.indexOf("-"));
