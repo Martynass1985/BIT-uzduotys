@@ -39,8 +39,10 @@ async function fetchDogImage(breed) {
 
   const data = await response.json();
   console.log(data);
+
   const imageUrl = data.message;
   console.log(imageUrl);
+
   const dogImage = document.getElementById("dogImage");
 
   dogImage.src = imageUrl;
