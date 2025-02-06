@@ -14,7 +14,7 @@ for (const breed in dogList.message) {
     breedOptions.push(breed);
   }
 }
-
+console.log(breedOptions);
 breedOptions.forEach((breedOption) => {
   const optionElement = document.createElement("option");
   optionElement.value = breedOption;
@@ -25,19 +25,25 @@ breedOptions.forEach((breedOption) => {
 });
 
 async function fetchDogImage(breed) {
-  console.log(breed);
+  const dogBreed = document.getElementById("dogBreed");
+  dogBreed.textContent = `${
+    breed.at(0).toUpperCase() + breed.replace("-", " ").slice(1)
+  }`;
+
+  if (breed.includes("-")) breed = breed.slice(0, breed.indexOf("-"));
+  else breed;
+
   const response = await fetch(
     `https://dog.ceo/api/breed/${breed}/images/random`
   );
+
   const data = await response.json();
   console.log(data);
   const imageUrl = data.message;
   console.log(imageUrl);
   const dogImage = document.getElementById("dogImage");
-  const dogBreed = document.getElementById("dogBreed");
 
   dogImage.src = imageUrl;
-  dogBreed.textContent = `${breed.at(0).toUpperCase() + breed.slice(1)}`;
 }
 
 document.getElementById("dogList").addEventListener("change", (event) => {
