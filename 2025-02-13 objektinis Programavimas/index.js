@@ -289,15 +289,13 @@ class Temperaturos {
   }
 }
 
-const temp = new Temperaturos(25);
+const temp = new Temperaturos(12);
 
 console.log(temp.celsius);
 console.log(temp.fahrenheit);
 
-temp.fahrenheit = 100;
+temp.fahrenheit = 83;
 console.log(temp.celsius);
-console.log(temp.fahrenheit);
 
-temp.celsius = 0;
-console.log(temp.celsius);
+temp.celsius = 15;
 console.log(temp.fahrenheit);
