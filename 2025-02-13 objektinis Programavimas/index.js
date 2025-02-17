@@ -265,14 +265,12 @@ class Temperaturos {
     return this.#celsius;
   }
 
-  set celsius(value) {
-    if (typeof value !== "number") {
-      console.error(
-        `Celsijaus temperatūra turi būti skaičius. Gauta: ${value}`
-      );
+  set celsius(v) {
+    if (typeof v !== "number") {
+      console.error(`Celsijaus temperatūra turi būti skaičius. Gauta: ${v}`);
       return;
     }
-    this.#celsius = value;
+    this.#celsius = v;
     this.#fahrenheit = this.#celsius * (9 / 5) + 32;
   }
 
@@ -280,14 +278,12 @@ class Temperaturos {
     return this.#fahrenheit;
   }
 
-  set fahrenheit(value) {
-    if (typeof value !== "number") {
-      console.error(
-        `Farenheito temperatūra turi būti skaičius. Gauta: ${value}`
-      );
+  set fahrenheit(v) {
+    if (typeof v !== "number") {
+      console.error(`Farenheito temperatūra turi būti skaičius. Gauta: ${v}`);
       return;
     }
-    this.#fahrenheit = value;
+    this.#fahrenheit = v;
 
     this.#celsius = +((this.#fahrenheit - 32) * (5 / 9)).toFixed(1);
   }
