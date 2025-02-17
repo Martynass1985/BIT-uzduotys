@@ -271,7 +271,7 @@ class Temperaturos {
       return;
     }
     this.#celsius = v;
-    this.#fahrenheit = this.#celsius * (9 / 5) + 32;
+    this.#fahrenheit = +(this.#celsius * (9 / 5) + 32).toFixed(1);
   }
 
   get fahrenheit() {
