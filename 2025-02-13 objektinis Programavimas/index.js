@@ -136,7 +136,7 @@ class Circle {
     this.#radius = radius;
     this.#matavimoVienetas = matavimoVienetas;
 
-    this.#area = 3.14 * radius ** 2;
+    this.#area = +(Math.PI * radius ** 2).toFixed(2);
   }
 
   get radius() {
@@ -155,7 +155,7 @@ class Circle {
           newRadius
       );
     this.#radius = newRadius;
-    this.#area = 3.14 * newRadius ** 2;
+    this.#area = +(Math.PI * newRadius ** 2).toFixed(2);
   }
 }
 
