@@ -188,7 +188,7 @@ class BankAccount {
   constructor(balance = 0) {
     if (typeof balance !== "number" || balance < 0) {
       console.error(
-        `Kuriant klasę gautas balansas yra ne skaičius arba reikšmė buvo neigiama, gauta reikšmė ${balance}. Vietoje to naudosime skaičių 0`
+        `Gautas balansas yra ne skaičius arba reikšmė buvo neigiama, gauta reikšmė ${balance}. Vietoje to naudosime skaičių 0`
       );
       balance = 0;
     } else {
@@ -197,24 +197,28 @@ class BankAccount {
     this.#balance = balance;
   }
   withdraw(m) {
-    if (m <= 0) {
-      console.error("Išimama suma turi būti teigiama.");
+    if (m <= 0 || typeof m !== "number") {
+      console.error("Išimama suma turi būti teigiama ir skaičius");
       return;
     }
     if (this.#balance >= m) {
       this.#balance -= m;
-      this.#transactionHistory.push(`Išimta pinigų suma - ${m}€`);
+      this.#transactionHistory.push(
+        `Išimta pinigų suma - ${m}, likutis - ${this.#balance}€`
+      );
     } else {
       console.error("Nepakanka lėšų sąskaitoje.");
     }
   }
   deposit(m) {
-    if (m <= 0) {
-      console.error("Papildoma suma turi būti teigiama.");
+    if (m <= 0 || typeof m !== "number") {
+      console.error("Pildoma suma turi būti teigiama ir skaičius.");
       return;
     }
     this.#balance += m;
-    this.#transactionHistory.push(`Sąskaita papildyta - ${m}€`);
+    this.#transactionHistory.push(
+      `Sąskaita papildyta - ${m}€, likutis ${this.#balance}€`
+    );
   }
   get balance() {
     return this.#balance;
@@ -231,10 +235,10 @@ class BankAccount {
       );
   }
 }
-const pr1 = new BankAccount(500);
+const pr1 = new BankAccount(1829);
 console.log(pr1);
-pr1.deposit(200);
-pr1.withdraw(189);
+pr1.deposit(285);
+pr1.withdraw(889);
 console.log(pr1);
 
 // 4. Temperatūros klasė (Temperature)
