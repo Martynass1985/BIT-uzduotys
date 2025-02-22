@@ -2,9 +2,9 @@
 // const arEgzistuoja = fs.existsSync("kelias/iki/failo.txt");
 // duoda boolean reikšmę true - jei egzistuoja, false - jei neegzistuoja
 
-import fs from "fs";
-
-const arEgzistuoja = fs.existsSync(".//data/failas.txt");
+import fs from "node:fs/promises";
+import { existsSync } from "node:fs";
+const arEgzistuoja = existsSync("./data/failas.txt");
 
 //   arEgzistuoja
 //     ? "failas.txt yra data kataloge"
@@ -14,8 +14,8 @@ const arEgzistuoja = fs.existsSync(".//data/failas.txt");
 // neegzistuoja, kad juos sukurtų.
 
 if (!arEgzistuoja) {
-  fs.mkdirSync("./data", { recursive: true });
-  fs.writeFileSync("./data/failas.txt", "Sveiki, čia failas.txt");
+  await fs.mkdir("./data", { recursive: true });
+  await fs.writeFile("./data/failas.txt", "Sveiki, čia failas.txt");
   console.log("failas.txt ir data katalogas buvo sukurti");
 } else {
   console.log("failas.txt yra data kataloge");
@@ -29,7 +29,7 @@ const args = process.argv.slice(2);
 const date = new Date();
 
 if (args.length > 0) {
-  fs.appendFileSync(
+  await fs.appendFile(
     "./data/failas.txt",
     `\n${date.toLocaleDateString("lt")} ${date.toLocaleTimeString(
       "lt"
